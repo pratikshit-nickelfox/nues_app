@@ -1,4 +1,5 @@
 class NewsDTO {
+  final Source? source;
   final String? author;
   final String? title;
   final String? description;
@@ -8,7 +9,8 @@ class NewsDTO {
   final String? content;
 
   const NewsDTO(
-      {required this.author,
+      {required this.source,
+      required this.author,
       required this.title,
       required this.description,
       required this.url,
@@ -18,6 +20,7 @@ class NewsDTO {
 
   factory NewsDTO.fromJson(Map<String, dynamic> json) {
     return NewsDTO(
+        source: Source.fromJSON(json['source']),
         author: json['author'],
         title: json['title'],
         description: json['description'],
@@ -25,5 +28,16 @@ class NewsDTO {
         urlToImage: json['urlToImage'],
         publishedAt: json['publishedAt'],
         content: json['content']);
+  }
+}
+
+class Source {
+  final String? id;
+  final String? name;
+
+  const Source({required this.id, required this.name});
+
+  factory Source.fromJSON(Map<String, dynamic> json) {
+    return Source(id: json['id'], name: json['name']);
   }
 }

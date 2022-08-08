@@ -36,8 +36,9 @@ class _NewsScreenState extends State<NewsScreen> {
             style: TextStyle(
                 color: Colors.blue, fontSize: 20, fontWeight: FontWeight.bold),
           ),
+          const SizedBox(height: 10),
           Container(
-            height: height * 0.80,
+            height: height * 0.83,
             child: FutureBuilder<List<NewsDTO>>(
               future: fetchNews(http.Client(), source),
               builder: (context, snapshot) {
@@ -106,6 +107,41 @@ class NewsList extends StatelessWidget {
                       ),
                     ),
                     const Align(
+                      alignment: Alignment.topCenter,
+                      child: Blur(
+                        blur: 2.5,
+                        child: SizedBox(
+                          height: 15,
+                          width: double.infinity,
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Container(
+                        padding: const EdgeInsets.only(left: 8),
+                        height: 15,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [
+                                Colors.blueGrey.withOpacity(0.5),
+                                Colors.lightBlue.withOpacity(0.4),
+                                Colors.transparent.withOpacity(0.2)
+                              ]),
+                        ),
+                        child: Text(
+                          "Source : ${news[index].source?.name}",
+                          style: const TextStyle(
+                              decorationStyle: TextDecorationStyle.solid,
+                              color: Colors.white,
+                              fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                    ),
+                    const Align(
                       alignment: Alignment.bottomCenter,
                       child: Blur(
                         blur: 2.5,
@@ -116,7 +152,7 @@ class NewsList extends StatelessWidget {
                       ),
                     ),
                     Align(
-                      alignment: Alignment.bottomCenter,
+                      alignment: Alignment.bottomLeft,
                       child: Container(
                         padding:
                             const EdgeInsets.only(left: 8, right: 8, top: 8),

@@ -37,8 +37,9 @@ class _SourceScreenState extends State<SourceScreen> {
                   fontSize: 28,
                   fontWeight: FontWeight.bold),
             ),
+            const SizedBox(height: 10),
             Container(
-              height: height * 0.80,
+              height: height * 0.83,
               child: FutureBuilder<List<SourceDTO>>(
                 future: fetchSources(http.Client()),
                 builder: (context, snapshot) {
