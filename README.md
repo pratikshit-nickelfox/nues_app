@@ -1,16 +1,7 @@
 # nuesapp
 
-A new Flutter project.
+A project for getting familiar with basics of Flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This app has a grid layout as its landing page. The grid layout contains news sources to choose from.
+You may select multiple news sources. As long as at least one news source is selected, you will have the option to move to a page where you can see all the news from the selected source(s).
+Clicking on a news article will redirect you to their website
