@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 import 'package:nuesapp/news_ui/news_screen.dart';
-import 'package:shimmer/shimmer.dart';
-
 import '../model/source_dto.dart';
 import '../repository/repo.dart';
 import '../ui_widgets/custom_shimmer.dart';
@@ -112,12 +108,6 @@ class SourceList extends StatefulWidget {
 class _SourceListState extends State<SourceList> {
   static ValueNotifier<Map<int, String>> indexList = ValueNotifier({});
 
-  @override
-  void initState() {
-    indexList.value = {};
-    super.initState();
-  }
-
   void checkIfIndexListContains(int index, String id) {
     Map<int, String> tempList = {};
 
@@ -135,8 +125,6 @@ class _SourceListState extends State<SourceList> {
       }
     });
   }
-
-  void goToNewsPage(BuildContext context, int index) {}
 
   @override
   Widget build(BuildContext context) {
