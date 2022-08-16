@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nuesapp/news_ui/news_screen.dart';
 import 'package:nuesapp/news_ui/source_screen.dart';
 
 void main() {
